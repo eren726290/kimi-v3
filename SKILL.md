@@ -270,7 +270,7 @@ Pick the tier that matches the task. Default to the lowest tier that covers the 
 | **Troubleshoot** | Rendering bug, font issue, page overflow. | `production.md` (+ design spec if CSS is the cause) |
 | **Anti-patterns** | Reviewing AI-generated drafts before shipping. | `anti-patterns.md` (six-category checklist) |
 | **Diagram** | Embedding SVG in a doc. | `diagrams.md` only (has its own token map) |
-
+| **Multi-page report** | Building a 2+ page report with panels, KPI strips, hero charts. | `references/plan.md` first, then `references/layout.md` for panel structure (layout.md is reference only — never overrides template CSS) |
 You can always escalate mid-task if the work turns out to need more than the initial tier.
 
 The full spec files for reference:
@@ -280,6 +280,8 @@ The full spec files for reference:
 - Production: `references/production.md`
 - Diagrams: `references/diagrams.md`
 - Anti-patterns: `references/anti-patterns.md`
+- Page planning: `references/plan.md` (multi-page reports only)
+- Layout panels: `references/layout.md` (structure reference — defer font sizes to template)
 
 ## Step 4 · Fill content into the template
 
