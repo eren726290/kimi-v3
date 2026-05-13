@@ -1,6 +1,6 @@
 ---
 name: kami
-description: 'Typeset professional documents: resumes, one-pagers, white papers, letters, portfolios, slide decks. Warm parchment, ink-blue accent, serif-led hierarchy. CN uses TsangerJinKai02, EN uses Charter, JA uses YuMincho (best-effort). Triggers on "做 PDF / 排版 / 一页纸 / 白皮书 / 作品集 / 简历 / PPT / slides", or "build me a resume / make a one-pager / design a slide deck / turn this into a PDF / make this presentable".'
+description: 'Typeset professional PDF documents: resumes, one-pagers, white papers, letters, portfolios, equity reports. English only. Warm parchment, ink-blue accent, serif-led hierarchy. Charter serif throughout. Triggers on: "build me a resume / make a one-pager / turn this into a PDF / make this presentable / equity report / white paper / changelog".'
 ---
 
 # kami · 紙
@@ -19,22 +19,9 @@ Key rule: explicit prompt > editorial judgment > habit notes > frontmatter defau
 
 ---
 
-## Step 1 · Decide the language
+## Step 1 · Language
 
-**Match the user's language.** Chinese -> `*.html` / `slides-weasy.html`. English -> `*-en.html` / `slides-weasy-en.html`. Japanese -> CJK path (`.html` / `slides-weasy.html`) as best-effort, JP Mincho first, visual QA before shipping. Reference docs are shared English specs.
-
-When ambiguous (e.g. a one-word command like "resume"), ask a one-liner rather than guess.
-
-| User language | HTML templates | Slides (PDF default) | Slides (PPTX fallback) |
-|---|---|---|---|
-| Chinese (primary) | `*.html` | `slides-weasy.html` | `slides.py` |
-| English | `*-en.html` | `slides-weasy-en.html` | `slides-en.py` |
-| Japanese (best-effort) | `*.html` | `slides-weasy.html` | `slides.py` |
-| Other languages (best-effort) | choose CJK or EN path by script coverage, then verify manually | choose `slides-weasy.html` or `slides-weasy-en.html`, then verify manually | use `slides.py` / `slides-en.py` only if PPTX is required |
-
-> Default to the WeasyPrint HTML path; fall back to PPTX (`slides*.py`) only when the user explicitly needs an editable deck.
-
-Always use `CHEATSHEET.md` and `references/*.md` for design, writing, production, and diagram guidance.
+English only. Always use *-en.html templates. Always use references/*.md for design, writing, production, and diagram guidance.
 
 ## Step 1.5 · Intent extraction (silent checklist)
 
@@ -57,22 +44,16 @@ Rules:
 
 ## Step 2 · Pick the document type
 
-| User says | Document | CN template | EN template |
-|---|---|---|---|
-| "one-pager / 方案 / 执行摘要 / exec summary" | One-Pager | `one-pager.html` | `one-pager-en.html` |
-| "white paper / 白皮书 / 长文 / 年度总结 / technical report" | Long Doc | `long-doc.html` | `long-doc-en.html` |
-| "formal letter / 信件 / 辞职信 / 推荐信 / memo" | Letter | `letter.html` | `letter-en.html` |
-| "portfolio / 作品集 / case studies" | Portfolio | `portfolio.html` | `portfolio-en.html` |
-| "resume / CV / 简历 / 履歴書" | Resume | `resume.html` | `resume-en.html` |
-| "slides / PPT / deck / 演示" | Slides | `slides-weasy.html` | `slides-weasy-en.html` |
-| "个股研报 / equity report / 估值分析 / investment memo / 股票分析" | Equity Report | `equity-report.html` | `equity-report-en.html` |
-| "更新日志 / changelog / release notes / 版本记录" | Changelog | `changelog.html` | `changelog-en.html` |
-
-> **Changelog vs. release notes**: The changelog template above is for styled document output. GitHub release notes are a separate deliverable; use `/write` with Release Note Template Mode.
-
-> Slides: default to `slides-weasy.html` / `slides-weasy-en.html` (WeasyPrint HTML → PDF). Use `slides.py` / `slides-en.py` only when the user explicitly requires an editable PPTX file.
-
-> Deck recipe: read design.md Section 8 before drafting slides.
+| User says | Document | EN template |
+|---|---|---|
+| "one-pager / exec summary" | One-Pager | `one-pager-en.html` |
+| "white paper / technical report" | Long Doc | `long-doc-en.html` |
+| "formal letter / memo" | Letter | `letter-en.html` |
+| "portfolio / case studies" | Portfolio | `portfolio-en.html` |
+| "resume / CV" | Resume | `resume-en.html` |
+| "slides / deck" | Slides | `slides-weasy-en.html` |
+| "equity report / investment memo" | Equity Report | `equity-report-en.html` |
+| "changelog / release notes" | Changelog | `changelog-en.html` |
 
 If unsure, ask a one-liner about the scenario rather than guess.
 
@@ -82,20 +63,20 @@ When the user asks for **a diagram inside** a long-doc / portfolio / slide (not 
 
 | User says | Diagram | Template |
 |---|---|---|
-| "架构图 / architecture / 系统图 / components diagram" | Architecture | `assets/diagrams/architecture.html` |
-| "流程图 / flowchart / 决策流 / branching logic" | Flowchart | `assets/diagrams/flowchart.html` |
-| "象限图 / quadrant / 优先级矩阵 / 2×2 matrix" | Quadrant | `assets/diagrams/quadrant.html` |
-| "柱状图 / bar chart / 分类对比 / grouped bars" | Bar Chart | `assets/diagrams/bar-chart.html` |
-| "折线图 / line chart / 趋势 / 股价 / time series" | Line Chart | `assets/diagrams/line-chart.html` |
-| "环形图 / donut / pie / 占比 / 分布结构" | Donut Chart | `assets/diagrams/donut-chart.html` |
-| "状态机 / state machine / 状态图 / lifecycle" | State Machine | `assets/diagrams/state-machine.html` |
-| "时间线 / timeline / 里程碑 / milestones / roadmap" | Timeline | `assets/diagrams/timeline.html` |
-| "泳道图 / swimlane / 跨角色流程 / cross-team flow" | Swimlane | `assets/diagrams/swimlane.html` |
-| "树状图 / tree / hierarchy / 层级 / 组织架构" | Tree | `assets/diagrams/tree.html` |
-| "分层图 / layer stack / 分层架构 / OSI / stack" | Layer Stack | `assets/diagrams/layer-stack.html` |
-| "维恩图 / venn / 交集 / overlap / 集合关系" | Venn | `assets/diagrams/venn.html` |
-| "K 线 / candlestick / OHLC / 股价走势 / price history" | Candlestick | `assets/diagrams/candlestick.html` |
-| "瀑布图 / waterfall / 收入桥 / revenue bridge / decomposition" | Waterfall | `assets/diagrams/waterfall.html` |
+| "architecture / components diagram" | Architecture | `assets/diagrams/architecture.html` |
+| "flowchart / branching logic" | Flowchart | `assets/diagrams/flowchart.html` |
+| "quadrant / 2×2 matrix" | Quadrant | `assets/diagrams/quadrant.html` |
+| "bar chart / grouped bars" | Bar Chart | `assets/diagrams/bar-chart.html` |
+| "line chart / price / time series" | Line Chart | `assets/diagrams/line-chart.html` |
+| "donut / pie / distribution" | Donut Chart | `assets/diagrams/donut-chart.html` |
+| "state machine / lifecycle" | State Machine | `assets/diagrams/state-machine.html` |
+| "timeline / milestones / roadmap" | Timeline | `assets/diagrams/timeline.html` |
+| "swimlane / cross-team flow" | Swimlane | `assets/diagrams/swimlane.html` |
+| "tree / hierarchy" | Tree | `assets/diagrams/tree.html` |
+| "layer stack / OSI / stack" | Layer Stack | `assets/diagrams/layer-stack.html` |
+| "venn / overlap" | Venn | `assets/diagrams/venn.html` |
+| "candlestick / OHLC / price history" | Candlestick | `assets/diagrams/candlestick.html` |
+| "waterfall / revenue bridge / decomposition" | Waterfall | `assets/diagrams/waterfall.html` |
 
 Read `references/diagrams.md` before drawing - it has the selection guide, kami token map, and the AI-slop anti-pattern table. Extract the `<svg>` block from the template and drop it into a `<figure>` inside long-doc / portfolio.
 
@@ -172,7 +153,7 @@ Use `OK`, `MISSING`, or `not required`. If a required item is missing and no use
 |---|---|
 | Content has explicit section labels matching template structure | Raw prose without section structure |
 | Metrics already quantified with units in place | Numbers scattered or implied, not extracted |
-| User wrote "use this as-is" / "直接用这个" / "原封不动" | User pasted multi-source dump (chat / email thread / multiple docs) |
+| User wrote "use this as-is" | User pasted multi-source dump (chat / email thread / multiple docs) |
 | Content count matches template (e.g. 4 metrics for 4 metric cards) | Content count mismatches template (too many or too few items) |
 | One coherent voice with consistent claims | Conflicting claims or duplicate facts across sources |
 
@@ -201,12 +182,9 @@ Skip this step for every doc type except slides.
 
 ### Path selection
 
-Default to the WeasyPrint HTML path. Switch to pptx only if the user explicitly requires an editable PPTX file.
-
 | Path | Template | When |
 |---|---|---|
-| WeasyPrint HTML → PDF (default) | `slides-weasy.html` / `slides-weasy-en.html` | All cases unless PPTX is required |
-| python-pptx → PPTX (fallback) | `slides.py` / `slides-en.py` | User explicitly requires editable PPTX |
+| WeasyPrint HTML → PDF | `slides-weasy-en.html` | Always |
 
 ### Page size
 
@@ -234,18 +212,13 @@ Before drafting any slide, confirm these points with the user. Ask all at once, 
 ### Content rules for slides
 
 - No section divider slides: use `.eyebrow` for section numbering, not a dedicated blue-background page
-- No CJK parentheses: replace `（...）` with `·` or `,`
 - Each bullet fits one line: trim until it does
 - 2×2 layouts: use `table.t2x2`, not CSS Grid
 - Pinned conclusions: use `.co` at `position: absolute; bottom: 12mm`
 
 ## Step 2.7 · Layout note (transparent, non-blocking)
 
-Before loading specs and filling the template, write a short editor-style note stating the layout intent: template choice, length target, narrative arc, embedded diagrams, material status, and output formats. Match the document's language. Keep it under 80 words, written as prose, not a status panel. Continue immediately after; do not wait.
-
-Example (CN):
-
-> 排版意图：Equity Report 中文版，2 页 A4。先立论与目标价，进入估值 (DCF 与可比公司)，落于催化剂与风险。中段嵌一张营收趋势折线和 FY26 收入桥瀑布。Logo 已就位，产品图暂缺，header 改走纯文字。输出 HTML 与 PDF。
+Before loading specs and filling the template, write a short editor-style note stating the layout intent: template choice, length target, narrative arc, embedded diagrams, material status, and output formats. Write in English. Keep it under 80 words, written as prose, not a status panel. Continue immediately after; do not wait.
 
 Example (EN):
 
@@ -303,14 +276,14 @@ These are the most common AI document failures. Cross-reference `references/anti
 
 ### Fill PDF metadata (WeasyPrint reads these into the PDF)
 
-Every template has meta placeholders in `<head>`. Fill all four before building:
+Every template has meta placeholders in `<head>`. Fill all before building:
 
-| Placeholder (CN) | Placeholder (EN) | Rule |
-|---|---|---|
-| `{{作者}}` | `{{AUTHOR}}` | Resume/letter/portfolio: use the person's name from the doc. All others: leave as-is (build script infers from git config or env) |
-| `{{摘要}}` | `{{DESCRIPTION}}` | Extract one sentence (≤150 chars) from the first 2 paragraphs |
-| `{{关键词}}` | `{{KEYWORDS}}` | 3-5 keywords from the title + section headings, comma-separated |
-| `{{文档标题}}` / `{{信件主题}}` etc. | `{{DOC_TITLE}}` / `{{LETTER_SUBJECT}}` etc. | Infer from the H1 or `.header .title` text |
+| Placeholder (EN) | Rule |
+|---|---|
+| `{{AUTHOR}}` | Resume/letter/portfolio: use the person's name from the doc. All others: leave as-is (build script infers from git config or env) |
+| `{{DESCRIPTION}}` | Extract one sentence (≤150 chars) from the first 2 paragraphs |
+| `{{KEYWORDS}}` | 3-5 keywords from the title + section headings, comma-separated |
+| `{{DOC_TITLE}}` / `{{LETTER_SUBJECT}}` etc. | Infer from the H1 or `.header .title` text |
 
 `<meta name="generator" content="Kami">` is already fixed in the template; do not change it.
 
@@ -328,12 +301,11 @@ Do not ask the user which format to export. Decide from context:
 | Signal | Output | Why |
 |---|---|---|
 | Any document request | HTML + PDF | PDF is the default deliverable, HTML is the source |
-| Slides / PPT / deck | HTML + PDF + PPTX | Presentations need a projectable format |
-| "分享" / "发朋友圈" / "share" / "post" / "preview" | + PNG | Social platforms and messaging need images |
-| "嵌入" / "插图" / "embed in another doc" | PNG only | Used as material inside other documents |
+| Slides / deck | HTML + PDF | Presentations need a projectable format |
+| "share" / "post" / "preview" | + PNG | Social platforms and messaging need images |
 | User explicitly says a format | Follow the user | Explicit request overrides auto-selection |
 
-PDF always ships. PPTX follows slides. PNG follows sharing context. The user should never need to think about formats.
+PDF always ships. The user should never need to think about formats.
 
 ## Step 5 · Build & verify
 
@@ -352,45 +324,25 @@ Visual anomalies (tag double rectangle, font fallback, page break issues) -> `pr
 
 ## Fonts
 
-**Chinese**
-- Main serif: TsangerJinKai02-W04.ttf (400 weight) + TsangerJinKai02-W05.ttf (500 weight, real bold)
-- Templates use dual @font-face declarations: W04 for body text, W05 for headings
-- Both files are commercial fonts. Keep them available in the repository for local preview and CDN fallback, but do not bundle them inside Claude Desktop skill ZIPs
-- Fallback chain baked into templates: Source Han Serif SC -> Noto Serif CJK SC -> Songti SC -> STSong -> Georgia
-
-**Japanese (best-effort)**
-- Uses CJK template path, no dedicated `-ja` templates yet
-- JP Mincho-first stack: YuMincho -> Hiragino Mincho ProN -> Noto Serif CJK JP -> Source Han Serif JP -> TsangerJinKai02 -> serif
-- Visually verify line breaks, punctuation rhythm, and emphasis weight before shipping
-
 **English**
 - Single serif: Charter (system-bundled, macOS/iOS), used for both headlines and body
 - No separate sans: `--sans: var(--serif)`, one font per page
 - Fallback: Georgia (cross-platform) / Palatino / Times New Roman
+"Font file in repo: assets/fonts/JetBrainsMono.woff2 (code blocks only). No font download scripts needed."
 
-Font files next to HTML with relative `@font-face` paths is the most stable setup. `scripts/package-skill.sh` excludes TsangerJinKai TTFs from the Claude Desktop ZIP.
-
-**Font auto-recovery (Claude Desktop)**
-
-Before building Chinese documents, ensure fonts are present. The script tries multiple CDN sources with retry and size validation:
-
-```bash
-bash scripts/ensure-fonts.sh
-```
-
-Run once before building. If all sources fail, the script suggests installing Source Han Serif SC as fallback.
+Font files next to HTML with relative `@font-face` paths is the most stable setup.
 
 ## Feedback protocol
 
-When the user gives **vague visual feedback** ("looks off", "太挤了", "not elegant"), do not guess. Ask back with current values:
+When the user gives **vague visual feedback** ("looks off", "not elegant"), do not guess. Ask back with current values:
 
 | User says | Ask about |
 |---|---|
-| "太挤了" / "too cramped" | Which element? Line-height (current: X)? Padding (current: Y)? Page margin? |
-| "太松了" / "too loose" | Same direction, reversed |
-| "颜色不对" / "color feels wrong" | Which element? Brand blue overused? A gray reading too cool? |
-| "不够好看" / "not polished" | Font rendering? Alignment? Whitespace distribution? Hierarchy unclear? |
-| "看着不专业" / "unprofessional" | Content wording? Or layout (alignment, consistency)? |
+| "too cramped" | Which element? Line-height (current: X)? Padding (current: Y)? Page margin? |
+| "too loose" | Same direction, reversed |
+| "color feels wrong" | Which element? Brand blue overused? A gray reading too cool? |
+| "not polished" | Font rendering? Alignment? Whitespace distribution? Hierarchy unclear? |
+| "unprofessional" | Content wording? Or layout (alignment, consistency)? |
 
 Template response: "X is currently set to Y. Would you like (a) [specific alternative within spec] or (b) [another option]?"
 
