@@ -26,16 +26,19 @@ Before writing any HTML, create PLAN.md in the working directory:
 - Page size: 10in 7.5in (4:3 landscape)
 
 ## Pages
-- [ ] page_01_cover.html       (L05 — Executive Snapshot)
-- [ ] page_02_[section].html   (L03 — Hero Visual)
-- [ ] page_03_[section].html   (L04 — Strategic Matrix)
-- [ ] page_04_[section].html   (L01 — SCR TwoColumn)
+- [ ] page_01_cover.html
+- [ ] page_02_exec_summary.html
+- [ ] page_03_[section].html
+- [ ] page_04_[section].html
+- [ ] page_05_[section].html
+- [ ] page_06_[section].html
+- [ ] page_07_[section].html
 
 ## Rules
 - One HTML file = one page exactly
+- for one page complex layout see references/layout.md
 - Mark [x] after each page is verified
 - Never build next page before marking current [x]
-- Hardcode page numbers in every footer: "N / Total"
 - Font sizes and CSS tokens come from the template only
 ```
 
