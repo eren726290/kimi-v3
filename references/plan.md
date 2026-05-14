@@ -36,7 +36,7 @@ Before writing any HTML, create PLAN.md in the working directory:
 
 ## Rules
 - One HTML file = one page exactly
-- for one page complex layout see references/layout.md
+- For complex panel layouts (two-column, hero chart, KPI grid,ect) consult references/layout.md for structure only — never copy font sizes from it
 - Mark [x] after each page is verified
 - Never build next page before marking current [x]
 - Font sizes and CSS tokens come from the template only
