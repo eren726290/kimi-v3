@@ -12,7 +12,7 @@ layout.md is a supporter, not an overrider. It never takes precedence over the t
 
 | Situation | Layout |
 |---|---|
-| Cover page with key findings | L05 — Executive Snapshot |
+| key findings| L05 — Executive Snapshot |
 | One chart is the whole story | L03 — Hero Visual |
 | Data table + supporting chart | L04 — Strategic Matrix |
 | Text argument + chart proof | L01 — SCR TwoColumn |
@@ -26,8 +26,8 @@ layout.md is a supporter, not an overrider. It never takes precedence over the t
 ```
 
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
-│  EYEBROW · DATE                                                          [ N / N ]  │
-│  Action title — full sentence stating the So What                                   │
+│   ......                                                                                    ...│
+│   .....                                                                                     ....│
 ├──────────────────────────────────────────┬──────────────────────────────────────────┤
 │  LEFT 40%                                │  RIGHT 60%                               │
 │                                          │                                           │
@@ -40,16 +40,16 @@ layout.md is a supporter, not an overrider. It never takes precedence over the t
 │  RESOLUTION                              │                                           │
 │  2–3 sentences of answer.                │  ②  Imperative two — action headline     │
 │                                          │                                           │
-│  ── Risk Matrix ──────────────────────   │  ③  Imperative three — action headline   │
-│  ┌─────────────┐  ┌─────────────┐        │                                           │
-│  │ Risk card 1 │  │ Risk card 2 │        │                                           │
-│  ├─────────────┤  ├─────────────┤        │                                           │
-│  │ Risk card 3 │  │ Risk card 4 │        │                                           │
-│  └─────────────┘  └─────────────┘        │                                           │
+│  ── Risk Matrix ──────────────────   │  ③  Imperative three — action headline   │
+│  ┌─────────────┐  ┌─────────────┐  │                                           │
+│  │ Risk card 1   │  │ Risk card 2 │     │                                           │
+│  ├─────────────┤  ├─────────────┤  │                                           │
+│  │ Risk card 3   │  │ Risk card 4 │     │                                           │
+│  └─────────────┘  └─────────────┘   │                                           │
 ├──────────────────────────────────────────┴──────────────────────────────────────────┤
 │  Takeaway — one sentence with brand left border                                      │
 ├─────────────────────────────────────────────────────────────────────────────────────┤
-│  Source:                                                                 [ N / N ]  │
+│                                         .......                                      │
 └─────────────────────────────────────────────────────────────────────────────────────┘
 
 **Structural CSS:**
@@ -109,8 +109,8 @@ layout.md is a supporter, not an overrider. It never takes precedence over the t
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
-│  EYEBROW · DATE                                                          [ N / N ]  │
-│  Action title — chart proves the headline                                            │
+│   ......                                                                                    ...│
+│   .....                                                                                     ....│
 ├─────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                      │
 │  Intro text — 2 sentences max, states what the chart shows                          │
@@ -132,7 +132,7 @@ layout.md is a supporter, not an overrider. It never takes precedence over the t
 ├─────────────────────────────────────────────────────────────────────────────────────┤
 │  Takeaway — one sentence with brand left border                                      │
 ├─────────────────────────────────────────────────────────────────────────────────────┤
-│  Source:                                                                 [ N / N ]  │
+│                                         .......                                      │
 └─────────────────────────────────────────────────────────────────────────────────────┘
 
 **Structural CSS:**
@@ -173,15 +173,15 @@ layout.md is a supporter, not an overrider. It never takes precedence over the t
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
-│  EYEBROW · DATE                                                          [ N / N ]  │
-│  Action title — table proves the ranking or comparison                               │
+│   ......                                                                                    ...│
+│   .....                                                                                     ....│
 ├─────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                      │
 │  Intro text — 2 sentences max                                                        │
 │                                                                                      │
 │  TABLE LABEL                                                                         │
 │  ┌───────────────┬────────────────────────┬─────────────┬─────────────┬──────────┐  │
-│  │  Column       │  Column                │  Column     │  Column     │  Stars   │  │
+│  │  Column       │  Column                │  Column     │  Column     │  Stars    │  │
 │  ├───────────────┼────────────────────────┼─────────────┼─────────────┼──────────┤  │
 │  │  Row value    │  Row value             │  [badge]    │  Row value  │  ★★★★☆   │  │
 │  │  Row value    │  Row value             │  [badge]    │  Row value  │  ★★★☆☆   │  │
@@ -190,13 +190,13 @@ layout.md is a supporter, not an overrider. It never takes precedence over the t
 │                                                                                      │
 │  CHART LABEL                                                                         │
 │  ┌───────────────────────────────────────────────────────────────────────────────┐  │
-│  │                [ Chart PNG — fills all remaining vertical space ]             │  │
+│  │                [ Chart PNG — fills all remaining vertical space ]                 │  │
 │  └───────────────────────────────────────────────────────────────────────────────┘  │
 │  Caption                                                                             │
 ├─────────────────────────────────────────────────────────────────────────────────────┤
 │  Takeaway — one sentence with brand left border                                      │
 ├─────────────────────────────────────────────────────────────────────────────────────┤
-│  Source:                                                                 [ N / N ]  │
+│                                         .......                                      │
 └─────────────────────────────────────────────────────────────────────────────────────┘
 
 **Structural CSS:**
@@ -221,35 +221,35 @@ td:first-child        { font-weight: 500; }
 
 ## L05 — Executive Snapshot (Cover / KPI Strip)
 
-**When to use:** Cover page with executive summary and 4 key findings.
+**When to use:** 4 key findings.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
-│  EYEBROW · DATE                                                          [ N / N ]  │
-│  Report title — bold declarative statement                                           │
+│   ......                                                                                    ...│
+│   .....                                                                                     ....│
 ├─────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                      │
-│  EXECUTIVE SUMMARY                                                                   │
+│   SUMMARY                                                                            │
 │  3–4 sentence overview paragraph providing strategic context and key takeaways.      │
 │                                                                                      │
 │  ┌────────────────────────────────────────┐  ┌────────────────────────────────────┐ │
-│  │  FINDING 01                            │  │  FINDING 02                        │ │
-│  │                                        │  │                                    │ │
-│  │  $80K → $12K                           │  │  73%                               │ │
-│  │  Finding title — short noun phrase     │  │  Finding title — short noun phrase │ │
-│  │  Body text 2 sentences. Concise.       │  │  Body text 2 sentences. Concise.   │ │
+│  │  FINDING 01                                   │  │  FINDING 02                        │ │
+│  │                                               │  │                                    │ │
+│  │                                                │  │                                    │ │
+│  │  Finding title — short noun phrase             │  │  Finding title — short noun phrase │ │
+│  │  Body text 2 sentences. Concise.               │  │  Body text 2 sentences. Concise.   │ │
 │  └────────────────────────────────────────┘  └────────────────────────────────────┘ │
 │                                                                                      │
 │  ┌────────────────────────────────────────┐  ┌────────────────────────────────────┐ │
-│  │  FINDING 03                            │  │  FINDING 04                        │ │
-│  │                                        │  │                                    │ │
-│  │  +28% CAGR                             │  │  $120B+                            │ │
-│  │  Finding title — short noun phrase     │  │  Finding title — short noun phrase │ │
-│  │  Body text 2 sentences. Concise.       │  │  Finding title — short noun phrase │ │
+│  │  FINDING 03                                   │  │  FINDING 04                        │ │
+│  │                                               │  │                                    │ │
+│  │                                               │  │                          │ │
+│  │  Finding title — short noun phrase             │  │  Finding title — short noun phrase │ │
+│  │  Body text 2 sentences. Concise.               │  │  Finding title — short noun phrase │ │
 │  └────────────────────────────────────────┘  └────────────────────────────────────┘ │
 │                                                                                      │
 ├─────────────────────────────────────────────────────────────────────────────────────┤
-│  Source:                                                                 [ N / N ]  │
+│                                         .......                                      │
 └─────────────────────────────────────────────────────────────────────────────────────┘
 
 **Structural CSS:**
@@ -288,7 +288,7 @@ td:first-child        { font-weight: 500; }
 
 ## Layout decision guide
 
-1. Cover / first page → L05
+1. key findings→ L05
 2. Single chart dominates → L03
 3. Table + chart → L04
 4. Text argument + chart → L01
