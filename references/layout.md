@@ -210,8 +210,8 @@ table       { width: 100%; border-collapse: collapse; flex-shrink: 0; font-famil
 thead tr    { background: var(--brand); }
 th          { font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #fff; padding: 6px 9px; text-align: left; white-space: nowrap; }
 td          { padding: 5px 9px; color: var(--near-black); border-bottom: .5px solid var(--border); font-family: var(--serif); }
-tr:nth-child(even) td { background: rgba(27,54,93,0.03); }
-td:first-child        { font-weight: 500; }
+tr:nth-child(even) td { background: #F2F4F7; }
+td:first-child        { font-weight: 500; } 
 .stars      { color: var(--brand); letter-spacing: 1px; }
 .chart-fill     { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
 .chart-fill img { width: 100%; flex: 1 1 0; min-height: 0; object-fit: fill; display: block; }
