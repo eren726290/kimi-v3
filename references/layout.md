@@ -27,8 +27,8 @@ All layout classes use the .l- prefix (e.g. .l-left-panel, .l-hero-block) to pre
 ```
 
 ┌─────────────────────────────────────────────────────────────────────────────────────┐
-│  EYEBROW · DATE                                                          [ N / N ]  │
-│  Action title — full sentence stating the So What                                   │
+│  ......                                                                        ...... │
+│   ......                                                                        ......│
 ├──────────────────────────────────────────┬──────────────────────────────────────────┤
 │  LEFT 40%                                │  RIGHT 60%                               │
 │                                          │                                           │
