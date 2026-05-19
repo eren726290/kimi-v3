@@ -3,9 +3,9 @@ name: kami
 description: 'Typeset professional PDF documents: resumes, one-pagers, white papers, letters, portfolios, equity reports. English only. Warm parchment, ink-blue accent, serif-led hierarchy. Charter serif throughout. Triggers on: "build me a resume / make a one-pager / turn this into a PDF / make this presentable / equity report / white paper / changelog".'
 ---
 
-# kami · 紙
+# kami
 
-**紙 · かみ** - the paper your deliverables land on.
+
 
 Good content deserves good paper. One design language across eight document types: warm parchment canvas, ink-blue accent, serif-led hierarchy, tight editorial rhythm.
 
@@ -31,7 +31,7 @@ Before choosing a template, verify these four dimensions are clear. Do not ask u
 |---|---|---|
 | **Purpose** | Why this document exists | Persuade investor vs. align internal team vs. close a candidate |
 | **Audience** | Who reads it, what they already know | Technical CTO (skip basics) vs. non-technical board (explain terms) |
-| **Constraint** | Hard limits on length, format, tone, or delivery | "One page max", "formal English", "print-ready A4" |
+| **Constraint** | Hard limits on length, format, tone, or delivery | "One page max", "formal English", "print-ready 4:3 landscape" |
 | **Success** | What outcome counts as success | They schedule a meeting / they approve the budget / they understand the architecture |
 
 Rules:
@@ -222,7 +222,7 @@ Before loading specs and filling the template, write a short editor-style note s
 
 Example (EN):
 
-> Layout intent: Equity Report (EN), two pages A4. Open with thesis and price target, run through valuation (DCF and comparables), close on catalysts and risks. A revenue line chart and an FY26 waterfall sit mid-doc. Logo is in hand; product image is absent, so the header stays text-only. Output: HTML and PDF.
+> Layout intent: Equity Report (EN), two pages 4:3 landscape. Open with thesis and price target, run through valuation (DCF and comparables), close on catalysts and risks. A revenue line chart and an FY26 waterfall sit mid-doc. Logo is in hand; product image is absent, so the header stays text-only. Output: HTML and PDF.
 
 The note is for transparency, not approval. If the user pushes back, adjust; otherwise proceed to Step 3.
 

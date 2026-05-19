@@ -102,7 +102,7 @@
   html, body { margin: 0; padding: 0; }
 
   /* Print rules: keep warm background, avoid harsh page breaks */
-  @page { size: A4; margin: 14mm 16mm; background: #f5f4ed; }
+  @page { size: 10in 7.5in; margin: 14mm 16mm; background: #f5f4ed; }
   @media print {
     body { background: #f5f4ed; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .page { padding: 0 !important; max-width: 100% !important; }
