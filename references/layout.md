@@ -41,17 +41,18 @@ All layout classes use the .l- prefix (e.g. .l-left-panel, .l-hero-block) to pre
 │  RESOLUTION                              │                                           │
 │  2–3 sentences of answer.                │  ②  Imperative two — action headline     │
 │                                          │                                           │
-│  ── Risk Matrix ──────────────────   │  ③  Imperative three — action headline   │
-│  ┌─────────────┐  ┌─────────────┐  │                                           │
-│  │ Risk card 1   │  │ Risk card 2 │     │                                           │
-│  ├─────────────┤  ├─────────────┤  │                                           │
-│  │ Risk card 3   │  │ Risk card 4 │     │                                           │
-│  └─────────────┘  └─────────────┘   │                                           │
+│  ── Risk Matrix ────────────────────────   │  ③  Imperative three — action headline   │
+│  ┌─────────────┐  ┌─────────────┐        │                                           │
+│  │ Risk card 1 │  │ Risk card 2 │        │                                           │
+│  ├─────────────┤  ├─────────────┤        │                                           │
+│  │ Risk card 3 │  │ Risk card 4 │        │                                           │
+│  └─────────────┘  └─────────────┘        │                                           │
 ├──────────────────────────────────────────┴──────────────────────────────────────────┤
 │  Takeaway — one sentence with brand left border                                      │
 ├─────────────────────────────────────────────────────────────────────────────────────┤
 │                                         .......                                      │
 └─────────────────────────────────────────────────────────────────────────────────────┘
+```
 
 **Structural CSS:**
 
@@ -135,6 +136,7 @@ All layout classes use the .l- prefix (e.g. .l-left-panel, .l-hero-block) to pre
 ├─────────────────────────────────────────────────────────────────────────────────────┤
 │                                         .......                                      │
 └─────────────────────────────────────────────────────────────────────────────────────┘
+```
 
 **Structural CSS:**
 
@@ -199,6 +201,7 @@ All layout classes use the .l- prefix (e.g. .l-left-panel, .l-hero-block) to pre
 ├─────────────────────────────────────────────────────────────────────────────────────┤
 │                                         .......                                      │
 └─────────────────────────────────────────────────────────────────────────────────────┘
+```
 
 **Structural CSS:**
 
@@ -207,12 +210,12 @@ All layout classes use the .l- prefix (e.g. .l-left-panel, .l-hero-block) to pre
   flex-direction: column;
   padding: var(--space-sm) var(--space-xl) var(--space-xs) var(--space-xl);
 }
-table       { width: 100%; border-collapse: collapse; flex-shrink: 0; font-family: var(--sans); }
-thead tr    { background: var(--brand); }
-th          { font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #fff; padding: 6px 9px; text-align: left; white-space: nowrap; }
-td          { padding: 5px 9px; color: var(--near-black); border-bottom: .5px solid var(--border); font-family: var(--serif); }
-tr:nth-child(even) td { background: rgba(27,54,93,0.03); }
-td:first-child        { font-weight: 500; }
+.l-table   { width: 100%; border-collapse: collapse; flex-shrink: 0; font-family: var(--sans); }
+.l-table thead tr    { background: var(--brand); }
+.l-table th          { font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #fff; padding: 6px 9px; text-align: left; white-space: nowrap; }
+.l-table td          { padding: 5px 9px; color: var(--near-black); border-bottom: .5px solid var(--border); font-family: var(--serif); }
+.l-table tr:nth-child(even) td { background: #F2F4F7; }
+.l-table td:first-child        { font-weight: 500; }
 .l-stars      { color: var(--brand); letter-spacing: 1px; }
 .l-chart-fill     { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; }
 .l-chart-fill img { width: 100%; flex: 1 1 0; min-height: 0; object-fit: fill; display: block; }
